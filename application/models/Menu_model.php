@@ -49,16 +49,16 @@ class Menu_model extends CI_Model
         return $query->result_array();
     }
 
-    public function getMenuOnPage($table, $row_count, $type = "s")
+    public function getMenuOnPage($table, $row_count,$offset = 0, $type = "s")
     {
         if ($type == "s") {
             $query = $this->db
-                ->get($table, $row_count);
+                ->get($table, $row_count,$offset);
             return $query->result_array();
         } else {
             $query = $this->db
             ->where('c_id',$type)
-            ->get($table, $row_count);
+            ->get($table, $row_count,$offset);
         return $query->result_array();
         }
 

@@ -7,16 +7,17 @@ class Menu_controller extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+         $this->load->library('pagination');
     }
 
     public function index($slug = null)
     {
-        $this->load->library('pagination');
+       
 
         $this->data['menu_data'] = null;
 
         $row_count = 6;
-
+        $offset = (int) $this->uri->segment(3);
         $count = 0;
 
         $this->load->model('Menu_model');
@@ -24,8 +25,9 @@ class Menu_controller extends CI_Controller
         if ($slug == "category") {
             $count = count($this->Menu_model->getMenu());
             $p_config['base_url'] = '/menu/category';
+            $p_config["uri_segment"] = 3;
             $this->data['title'] = "Our Menu";
-            $this->data['menu_data'] = $this->Menu_model->getMenuOnPage("menu", $row_count);
+            $this->data['menu_data'] = $this->Menu_model->getMenuOnPage("menu", $row_count,$offset);
         }
 
         $slug_data = $this->Menu_model->getMenu();
@@ -34,7 +36,7 @@ class Menu_controller extends CI_Controller
                 $count = count($this->Menu_model->getMenu("menu_items", $val['category_id']));
                 $p_config['base_url'] = '/menu/' . $val['slug'];
                 $this->data['title'] = $val['name'];
-                $this->data['menu_data'] = $this->Menu_model->getMenuOnPage("menu_items", $row_count, $val['category_id']);
+                $this->data['menu_data'] = $this->Menu_model->getMenuOnPage("menu_items", $row_count,$offset, $val['category_id']);
             }
         }
 
@@ -47,6 +49,8 @@ class Menu_controller extends CI_Controller
         $p_config['cur_tag_close'] = "</a>";
         $p_config['next_link'] = '»';
         $p_config['prev_link'] = '«';
+
+        
 
         //init pagination
         $this->pagination->initialize($p_config);

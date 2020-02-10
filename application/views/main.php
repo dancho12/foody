@@ -365,121 +365,45 @@
 
 						<div class="blog-post-container">
 							<div class="row">
+							<?php foreach ($blog_data as $key => $value): ?>
 								<div class="col-sm-6">
 									<article class="post-content wow fadeIn" data-wow-delay=".1s">
 										<div class="post-meta"> 
 											<div class="entry-meta">
 												<div class="entry-date"> 
-													<span class="date">23</span>
-													<span class="month">Oct</span>
+                                                    <span class="date"><?php
+                                                    $d = substr($value['add_date'],8,2); 
+                                                    echo $d; ?></span>
+													<span class="month"><?php
+                                                    $m = substr($value['add_date'],5,2); 
+                                                    $m = $months[intval($m)];
+                                                    echo $m; ?></span>
 												</div> 
 											</div><!-- /.entry-meta -->
 										</div><!-- /.post-meta -->
 										<div class="featured-img">
-											<img class="blog-post-image" src="images/blog/image-1.jpg" alt="Blog Post Image">
-											<a href="images/blog/big-image.jpg" class="boxer img-link"></a>
+											<img class="blog-post-image" src="/images/blog/image-1.jpg" alt="Blog Post Image">
+											<a href="/images/blog/big-image.jpg" class="boxer img-link"></a>
 										</div><!-- /.featured-img -->
 										<div class="post-container">
 											<h2 class="post-title">
-												<a href="single-page.html">We provide safe food with delicious menu</a>
+												<a href="/blog/<?php echo $value['slug']; ?>"> <?php echo $value['title']; ?></a>
 											</h2><!-- /.post-title -->
 											<p class="post-description">
-												When we cook, we not only take on the responsibility of making a delicious meal, but also of ensuring that the food we serve is safe to eat. We always try to keep a clean and delicious menu.
+                                            <?php echo $value['des']; ?>
 											</p>
 											<div class="continue-reading pull-left">
-												<a href="blog-single.html">Read More <i class="fa fa-angle-double-right"></i>  </a>
+												<a href="/blog/<?php echo $value['slug']; ?>">Read More <i class="fa fa-angle-double-right"></i>  </a>
 											</div><!-- /.continue-reading --> 
 										</div><!-- /.post-container -->
 									</article><!-- /.post-content --> 
 								</div><!-- /.col-sm-6 -->
 
-								<div class="col-sm-6">
-									<article class="post-content wow fadeIn" data-wow-delay=".2s">
-										<div class="post-meta"> 
-											<div class="entry-meta">
-												<div class="entry-date"> 
-													<span class="date">12</span>
-													<span class="month">Oct</span>
-												</div> 
-											</div><!-- /.entry-meta -->
-										</div><!-- /.post-meta -->
-										<div class="featured-img">
-											<img class="blog-post-image" src="images/blog/image-2.jpg" alt="Blog Post Image">
-											<a href="images/blog/big-image.jpg" class="boxer img-link"></a>
-										</div><!-- /.featured-img -->
-										<div class="post-container">
-											<h2 class="post-title">
-												<a href="single-page.html">Eggs are most important for breakfast</a>
-											</h2><!-- /.post-title -->
-											<p class="post-description">
-												Eggs are one of the most versatile and important foods on earth and a popular breakfast item in many cultures. Cooking eggs properly can make awesome test on your breakfast and it’s love to all.
-											</p>
-											<div class="continue-reading pull-left">
-												<a href="blog-single.html">Read More <i class="fa fa-angle-double-right"></i>  </a>
-											</div><!-- /.continue-reading --> 
-										</div><!-- /.post-container -->
-									</article><!-- /.post-content --> 
-								</div><!-- /.col-sm-6 -->
-
-								<div class="col-sm-6">
-									<article class="post-content wow fadeIn" data-wow-delay=".1s">
-										<div class="post-meta"> 
-											<div class="entry-meta">
-												<div class="entry-date"> 
-													<span class="date">29</span>
-													<span class="month">Sep</span>
-												</div> 
-											</div><!-- /.entry-meta -->
-										</div><!-- /.post-meta -->
-										<div class="featured-img">
-											<img class="blog-post-image" src="images/blog/image-3.jpg" alt="Blog Post Image">
-											<a href="images/blog/big-image.jpg" class="boxer img-link"></a>
-										</div><!-- /.featured-img -->
-										<div class="post-container">
-											<h2 class="post-title">
-												<a href="single-page.html">We know how to cook &amp; make better Pasta</a>
-											</h2><!-- /.post-title -->
-											<p class="post-description">
-												Dumping noodles into water with powdered cheese doesn’t mean cooking pasta. Pasta can be light, delicate and incredibly flavorful by it’s cooking. You may be become a pasta lover with our cook item.
-											</p>
-											<div class="continue-reading pull-left">
-												<a href="blog-single.html">Read More <i class="fa fa-angle-double-right"></i>  </a>
-											</div><!-- /.continue-reading --> 
-										</div><!-- /.post-container -->
-									</article><!-- /.post-content --> 
-								</div><!-- /.col-sm-6 -->
-
-								<div class="col-sm-6">
-									<article class="post-content wow fadeIn" data-wow-delay=".2s">
-										<div class="post-meta"> 
-											<div class="entry-meta">
-												<div class="entry-date"> 
-													<span class="date">23</span>
-													<span class="month">Sep</span>
-												</div> 
-											</div><!-- /.entry-meta -->
-										</div><!-- /.post-meta -->
-										<div class="featured-img">
-											<img class="blog-post-image" src="images/blog/image-4.jpg" alt="Blog Post Image">
-											<a href="images/blog/big-image.jpg" class="boxer img-link"></a>
-										</div><!-- /.featured-img -->
-										<div class="post-container">
-											<h2 class="post-title">
-												<a href="single-page.html">Do you know Vegetables are most important?</a>
-											</h2><!-- /.post-title -->
-											<p class="post-description">
-												Some people think that Vegetables can not provide better delicious food into our menu item. We provide better cook vegetables and make it delicious for all. Cooking methods can improve it only.
-											</p>
-											<div class="continue-reading pull-left">
-												<a href="blog-single.html">Read More <i class="fa fa-angle-double-right"></i>  </a>
-											</div><!-- /.continue-reading --> 
-										</div><!-- /.post-container -->
-									</article><!-- /.post-content --> 
-								</div><!-- /.col-sm-6 -->
+                                <?php endforeach?>
 							</div><!-- /.row -->
 
 							<div class="btn-container">
-								<a href="blog-page.html" class="btn btn-sm btn-orange"> View All Posts </a>
+								<a href="/blog" class="btn btn-sm btn-orange"> View All Posts </a>
 							</div><!-- /.btn-container -->
 
 						</div><!-- /.blog-post-container --> 

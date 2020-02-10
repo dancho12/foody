@@ -54,5 +54,8 @@ $route['404_override'] = 'page_404';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['menu/category/(:num)'] = 'Menu_controller/index/category/$1';
-$route['menu/category'] = 'Menu_controller/index/category/$1';
+$route['menu/category'] = 'Menu_controller/index/category';
 $route['menu/(:any)'] = 'Menu_controller/index/$1';
+
+$route['blog/(:num)'] = 'Blog/index/$1';
+$route['blog/(:any)'] = 'Blog/page/$1';
