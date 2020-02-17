@@ -58,22 +58,38 @@ class Blog extends CI_Controller
         $last;
         foreach ($all as $i => $val) {
             if ($blog_page['id'] == $val['id']) {
-            
-                $pos=$i;
+
+                $pos = $i;
             }
             $last = $i;
         }
-        if($pos!=0){
-            
-                $this->data['n_page'] = $all[$pos-1]['slug'];
-        }
-    if($pos!=$last){ 
-        $this->data['pr_page'] = $all[$pos+1]['slug'];
-       
+        if ($pos != 0) {
 
-    }
-               
-       
+            $this->data['n_page'] = $all[$pos - 1]['slug'];
+        }
+        if ($pos != $last) {
+            $this->data['pr_page'] = $all[$pos + 1]['slug'];
+
+        }
+
+        $blog_comments = $this->Blog_model->getComments($slug);
+        if(!empty($blog_comments)){
+            foreach($blog_comments as $i=> $val){
+            $user = $this->Blog_model->getUsers($val['user_id']);
+            $blog_comments[$i]['user_id'] = $user['username'];
+        }
+        $this->data['comments_count'] = count($blog_comments);
+        $this->data['comments'] = $blog_comments;
+        $this->data['comments_exist'] = true;
+        }else{
+            $this->data['comments_count'] = 0;
+            $this->data['comments_exist'] = false;
+            $this->data['comments'] = "Not yet";
+        }
+
+        
+
+        
 
         $this->load->view('templates/header', $this->data);
         $this->load->view('page', $this->data);

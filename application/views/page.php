@@ -20,7 +20,9 @@
 										<a href="#"><?php echo $page_data['title']?></a>
 									</h2>
 									<div class="entry">
-										<?php echo $page_data['main_text']?>
+										<?php echo $page_data['main_text'];
+										
+										// print_r($comments);?>
 									</div><!-- /.entry -->
 									<footer class="post-meta">
 										<div class="entry-meta pull-left">
@@ -57,21 +59,27 @@
 
 							<div id="comments" class="comments-area">
 								<h3 class="comments-title"> 
-									23 Comments	
+								<?php echo $comments_count; ?> Comments	
 								</h3><!-- /.comments-title -->
 
 								<ol class="comment-list">
 									<li class="comment parent" id="comments-id-1">
+
+									<?php 
+									if(!$comments_exist){
+										echo "<p>".$comments."</p>";
+									}else{
+									foreach ($comments as $key => $value): ?>
 										<article class="comment-body">
 											<div class="comment-meta">
 												<div class="comment-author vcard">
-													<img class="avatar" alt="Comment Author Name" src="images/comments/01.png" >
+													<img class="avatar" alt="Comment Author Name" src="/images/comments/01.png" >
 												</div><!-- /.comment-author -->
 											</div><!-- /.comment-meta -->
 
 											<div class="comment-metadata">
 												<h5 class="comment-author">
-													<a href="#">Mirko</a>
+													<a href="#"><?php echo $value['user_id']; ?></a>
 												</h5><!-- /.comment-author -->
 												<a href="blog-single.html#comments-id-1">
 													<time datetime="2014-04-22T14:52:56+00:00">
@@ -84,99 +92,12 @@
 											</div><!-- /.comment-metadata -->
 
 											<div class="comment-content">
-												<p>The blog page you guys design is really cool! I am waiting for the WP Version of foody. Hope you will release the WordPress Version very soon.</p>
-												<p>Thanks a lot!</p>
-												<p>Mirko</p>
+												<p><?php echo $value['text']; ?></p>
 											</div><!-- .comment-content -->
-
+									<?php endforeach;
+											}?>
 										</article><!-- /.comment-body -->
-										<ol class="children">
-											<li class="comment" id="comments-id-2">
-												<article class="comment-body">
-													<div class="comment-meta">
-														<div class="comment-author vcard">
-															<img class="avatar" alt="Comment Author Name" src="images/comments/02.png" >
-														</div><!-- /.comment-author -->
-													</div><!-- /.comment-meta -->
-
-													<div class="comment-metadata">
-														<h5 class="comment-author">
-															<a href="#">Riki</a>
-														</h5><!-- /.comment-author -->
-														<a href="blog-single.html#comments-id-1">
-															<time datetime="2014-04-22T15:22:56+00:00">
-																April 22, 2014 at 3:22 pm							
-															</time>
-														</a>
-														<span class="reply pull-right">
-															<a class="comment-reply-link" href="blog-single.html?replytocom=847#respond">Reply</a> 
-														</span><!-- /.reply -->
-													</div><!-- /.comment-metadata -->
-
-													<div class="comment-content">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ab consequatur temporibus dicta odio consectetur quo. In dicta eos atque, debitis maiores earum assumenda sunt illum itaque. Unde, sed, neque!</p> 
-													</div><!-- .comment-content -->
-
-												</article><!-- /.comment-body -->
-											</li><!-- /.comment -->
-										</ol><!-- /.children -->
-									</li><!-- /.comment -->
-									<li class="comment" id="comments-id-3">
-										<article class="comment-body">
-											<div class="comment-meta">
-												<div class="comment-author vcard">
-													<img class="avatar" alt="Comment Author Name" src="images/comments/03.png" >
-												</div><!-- /.comment-author -->
-											</div><!-- /.comment-meta -->
-
-											<div class="comment-metadata">
-												<h5 class="comment-author">
-													<a href="#">Aysha</a>
-												</h5><!-- /.comment-author -->
-												<a href="blog-single.html#comments-id-1">
-													<time datetime="2014-04-22T15:25:56+00:00">
-														April 22, 2014 at 3:25 pm							
-													</time>
-												</a>
-												<span class="reply pull-right">
-													<a class="comment-reply-link" href="blog-single.html?replytocom=847#respond">Reply</a> 
-												</span><!-- /.reply -->
-											</div><!-- /.comment-metadata -->
-
-											<div class="comment-content">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ab consequatur temporibus dicta odio consectetur quo. In dicta eos atque, debitis maiores earum assumenda sunt illum itaque. Unde, sed, neque!</p> 
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi similique natus nostrum fugiat error ratione ipsum aliquid cumque eligendi optio? Facilis ipsum iure tempora laboriosam mollitia modi, neque obcaecati quia.</p>
-											</div><!-- .comment-content -->
-
-										</article><!-- /.comment-body -->
-									</li><!-- /.comment -->
-									<li class="comment" id="comments-id-4">
-										<article class="comment-body">
-											<div class="comment-meta">
-												<div class="comment-author vcard">
-													<img class="avatar" alt="Comment Author Name" src="images/comments/04.png" >
-												</div><!-- /.comment-author -->
-											</div><!-- /.comment-meta -->
-
-											<div class="comment-metadata">
-												<h5 class="comment-author">
-													<a href="#">James</a>
-												</h5><!-- /.comment-author -->
-												<a href="blog-single.html#comments-id-1">
-													<time datetime="2014-04-22T16:22:56+00:00">
-														April 22, 2014 at 4:22 pm							
-													</time>
-												</a>
-												<span class="reply pull-right">
-													<a class="comment-reply-link" href="blog-single.html?replytocom=847#respond">Reply</a> 
-												</span><!-- /.reply -->
-											</div><!-- /.comment-metadata -->
-
-											<div class="comment-content">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ab consequatur temporibus dicta odio consectetur quo. In dicta eos atque, debitis maiores earum assumenda sunt illum itaque. Unde, sed, neque!</p> 
-											</div><!-- .comment-content -->
-
-										</article><!-- /.comment-body -->
+										
 									</li><!-- /.comment -->
 								</ol><!-- /.comment-list -->
 

@@ -23,6 +23,28 @@ class Blog_model extends CI_Model
 
     }
 
+    public function getComments($slug){
+        $query = $this->db->where('slug',$slug)
+        ->get('comments');
+        return $query->result_array();
+    }
+    public function getUsers($id){
+        $query = $this->db->get_where('users', array('id' => $id));
+        return $query->row_array();
+    }
+
+    public function setComments($slug,$username,$email,$url){
+        $this->db->query("INSERT INTO users ( `username`, `email`, `url`) VALUES (NULL, $username, $email, $url)");
+        $query = $this->db->get_where('users', array('username' => $username));
+        return $query->row_array();
+    }
+
+    public function setUsers($username,$email,$url){
+        $this->db->query("INSERT INTO users ( `username`, `email`, `url`) VALUES (NULL, $username, $email, $url)");
+        $query = $this->db->get_where('users', array('username' => $username));
+        return $query->row_array();
+    }
+
     public function getBlogOnPage($row_count,$offset=0)
     {
 
