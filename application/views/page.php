@@ -21,7 +21,6 @@
 									</h2>
 									<div class="entry">
 										<?php echo $page_data['main_text'];
-										
 										// print_r($comments);?>
 									</div><!-- /.entry -->
 									<footer class="post-meta">
@@ -83,7 +82,7 @@
 												</h5><!-- /.comment-author -->
 												<a href="blog-single.html#comments-id-1">
 													<time datetime="2014-04-22T14:52:56+00:00">
-														April 22, 2014 at 2:52 pm							
+													<?php echo $value['add_date']; ?>							
 													</time>
 												</a>
 												<span class="reply pull-right">
@@ -107,10 +106,11 @@
 									<h4 id="reply-title" class="comment-reply-title">
 										Leave a Reply
 									</h4><!-- /#reply-title -->
-									<form action="#" method="post" id="commentform" class="comment-form">
+									<form action="/blog/<?php echo $slug; ?>" method="post" id="commentform" class="comment-form">
+									
 										<input id="author" class="form-control" name="author" type="text" value="" size="30" aria-required="true" placeholder="Name" title="Name" required>
-										<input id="email" class="form-control" name="email" type="email" value="" size="30" aria-required="true" placeholder="Email" title="Email"  required>
-										<input id="url" class="form-control" name="url" type="url" value="" size="30" placeholder="URL" title="URL" >
+										<!-- <input id="email" class="form-control" name="email" type="email" value="" size="30" aria-required="true" placeholder="Email" title="Email"  required> -->
+										<!-- <input id="url" class="form-control" name="url" type="url" value="" size="30" placeholder="URL" title="URL" > -->
 										<textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment" title="Comment"  required></textarea>
 										<button name="submit" class="btn btn-sm btn-default full-width" type="submit" id="submit">Post Comment</button>
 									</form><!-- /#commentform -->

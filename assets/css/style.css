@@ -82,6 +82,7 @@ Table of Contents End
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
 @import url(https://fonts.googleapis.com/css?family=Chewy);
+@import url(/assets/fonts/style.css);
 
 /* 1 - Google Font End 
 ------------------------------------------------------------------------*/
@@ -614,7 +615,8 @@ textarea.form-control{
 .section-title {
 	background: #ffffff; 
 	color: #1a1a1a; 
-	font-family: "Dancing Script",sans-serif;
+	/* font-family: "Dancing Script",sans-serif; */
+	font-family: "VeryBerry Pro";
 	font-size: 1.5em;
 	font-weight: 700;
 	text-transform: inherit; 
@@ -854,7 +856,8 @@ nav.navbar-collapse{
 }
 .navbar-default .navbar-nav>li>a {
 	color: #ffffff;
-	font-family: "Dancing Script",sans-serif;
+	/* font-family: "Dancing Script",sans-serif; */
+	font-family: "VeryBerry Pro";
 	font-weight: 700;
 	font-size: 1.25em;
 	display: inline-block;
@@ -866,7 +869,8 @@ nav.navbar-collapse{
 }
 .navbar-nav>li>.sub-menu>li>a{
 	color: #ffffff;
-	font-family: "Dancing Script",sans-serif;
+	/* font-family: "Dancing Script",sans-serif; */
+	font-family: "VeryBerry Pro";
 	font-weight: 700;
 	font-size: 1em;
 	line-height: 30px;
@@ -1014,7 +1018,8 @@ nav.navbar-collapse{
 }
 .top-section .top-heading-1 {
 	color: #fcb322;
-	font-family: "Dancing Script",sans-serif;
+	/* font-family: "Dancing Script",sans-serif; */
+	font-family: "VeryBerry Pro";
 	font-size: 2.8125em;
 	font-weight: 700;
 	padding-top: 100px;
@@ -2598,23 +2603,23 @@ footer.post-meta .entry-date i {
 	line-height: 40px;
 	font-size: 1.25em;
 	height: 40px;
-	border: 1px solid rgba(220, 220, 220, 0.5)
+	border: 1px solid rgba(220, 220, 220, 0.5);
 	border-bottom: none;
 	border-bottom: none;
 }
 .widget_calendar tbody{
-	border: 1px solid rgba(220, 220, 220, 0.5)
+	border: 1px solid rgba(220, 220, 220, 0.5);
 	border-top: none;
 }
 .widget_calendar th { 
 	height: 40px;
 	text-align: center;
-	border: 1px solid rgba(220, 220, 220, 0.5) 
+	border: 1px solid rgba(220, 220, 220, 0.5);
 }
 .widget_calendar td {
 	height: 40px;
 	text-align: center;
-	border: 1px solid rgba(220, 220, 220, 0.5)
+	border: 1px solid rgba(220, 220, 220, 0.5);
 }
 .widget_calendar td a{
 	display: inline-block;

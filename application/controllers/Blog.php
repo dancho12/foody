@@ -50,6 +50,19 @@ class Blog extends CI_Controller
     public function page($slug = null)
     {
         $this->load->model('Blog_model');
+
+        $usermane = $this->input->post('author');
+
+        $text = $this->input->post('comment');
+        if(isset($usermane)){
+            $val = $this->Blog_model->setUsers($usermane);
+            $this->Blog_model->setComments($slug,$val['id'],$text);
+        }
+        $this->data['slug'] = $slug;
+
+
+
+
         $blog_page = $this->Blog_model->getBlog($slug);
         $this->data['page_data'] = $blog_page;
         $this->data['title'] = $blog_page['title'];
@@ -88,6 +101,9 @@ class Blog extends CI_Controller
         }
 
         
+        
+
+
 
         
 

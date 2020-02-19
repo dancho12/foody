@@ -59,3 +59,4 @@ $route['menu/(:any)'] = 'Menu_controller/index/$1';
 
 $route['blog/(:num)'] = 'Blog/index/$1';
 $route['blog/(:any)'] = 'Blog/page/$1';
+$route['bloge/checkdata'] = 'Blog/checkdata';

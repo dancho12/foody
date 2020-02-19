@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'VeryBerry Pro';
+    src: local('VeryBerry Pro Regular'), local('VeryBerry-Pro-Regular'),
+        url('VeryBerryPro-Regular.woff2') format('woff2'),
+        url('VeryBerryPro-Regular.woff') format('woff'),
+        url('VeryBerryPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }

@@ -33,14 +33,13 @@ class Blog_model extends CI_Model
         return $query->row_array();
     }
 
-    public function setComments($slug,$username,$email,$url){
-        $this->db->query("INSERT INTO users ( `username`, `email`, `url`) VALUES (NULL, $username, $email, $url)");
-        $query = $this->db->get_where('users', array('username' => $username));
-        return $query->row_array();
+    public function setComments($slug,$user_id,$text){
+        $date = date("Y-m-d H:i:s");
+        $this->db->query("INSERT INTO comments ( `user_id`,`add_date`, `text`,`slug`) VALUES ('$user_id','$date', '$text', '$slug')");
     }
 
-    public function setUsers($username,$email,$url){
-        $this->db->query("INSERT INTO users ( `username`, `email`, `url`) VALUES (NULL, $username, $email, $url)");
+    public function setUsers($username){
+        $this->db->query("INSERT INTO `users` (`id`, `username`) VALUES (NULL, '$username');");
         $query = $this->db->get_where('users', array('username' => $username));
         return $query->row_array();
     }
